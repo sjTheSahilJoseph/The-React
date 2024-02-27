@@ -1,3 +1,4 @@
+// That's the main component in react app.
 import logo from './logo.svg';
 import './App.css';
 
