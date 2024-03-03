@@ -1,36 +1,13 @@
 import Video from "./components/Video";
 import Com from "./components/Com";
 import "./App.css";
+import data from './data/data'
+
+// Also data outside the src folder is not supported.
 
 function App() {
     // As this is JSX, we can use JavaScript things as well. Like passing props using javaScript Object and then using spread operator.
     // names should match 100%.
-    let data = [
-        {
-        id: 1,
-        title: "title x",
-        channel: "chanell x",
-        time: "25 minutes ago",
-        views: "1M views",
-        verified: true,
-    },
-        {
-        id: 2,
-        title: "title x",
-        channel: "chanell x",
-        time: "25 minutes ago",
-        views: "1M views",
-        verified: false,
-    },
-        {
-        id: 3,
-        title: "title x",
-        channel: "chanell x",
-        time: "25 minutes ago",
-        views: "1M views",
-        verified: true,
-    },
-    ]
     // We can use higher-order functions like map.
     // It'll take an callback function which return JSX. Using an iterator.
 
