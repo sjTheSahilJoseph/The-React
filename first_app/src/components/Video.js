@@ -6,19 +6,8 @@ function Video(props) {
     let channel = props.channel;
     let views = props.views;
     let time = props.time;
-    let children = props.children;
     let channelJSX;
     let verified = props.verified;
-
-    if (verified) {
-    channelJSX = <div className='channel'>{channel} verified</div>
-    }
-        // We can use this as variable.
-    else {
-    channelJSX = <div className='channel'>{channel}</div>
-    }
-
-    // We can't use if-else in return.
 
     return (
 
@@ -29,7 +18,7 @@ function Video(props) {
                 </div>
                 <div className='title'>{title}</div>
 
-        { verified && <div className='channel'>{channel} verified</div>}
+        { verified ? <div className='channel'>{channel} verified</div> :  <div className='channel'>{channel}</div>}
                 <div className='views'>{views} views <span>.</span> {time}</div>
             </div>
         </>
