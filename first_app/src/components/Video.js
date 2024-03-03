@@ -6,6 +6,7 @@ function Video(props) {
     let channel = props.channel;
     let views = props.views;
     let time = props.time;
+    let children = props.children;
 
     return (
 
@@ -17,6 +18,9 @@ function Video(props) {
                 <div className='title'>{title}</div>
                 <div className='channel'>{channel}</div>
                 <div className='views'>{views} views <span>.</span> {time}</div>
+        {children}
+        {// That's how we can use children prop. It is a component.
+        }
             </div>
         </>
 

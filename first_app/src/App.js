@@ -1,4 +1,5 @@
 import Video from "./components/Video";
+import Com from "./components/Com";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                 <Video title="Title 2" channel="JS" views="1k" time="10 minutes ago" />
                 <Video channel="JS" views="1k" time="10 minutes ago" />
                 <Video {...data}/>
+                <Video channel="JS" views="1k" time="10 minutes ago" children={<Com/>}/>
             </div>
         </>
     );
