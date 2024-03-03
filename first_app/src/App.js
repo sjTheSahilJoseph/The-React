@@ -1,25 +1,21 @@
-// That's the main component in react app.
-import logo from './logo.svg';
-import './App.css';
+// Relative Path
+import Video from "./components/Video";
+
+// Components are re-usable.
+
+// But the data is same. How can we change the data inside component?
+// We use props for that to pass data.
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+
+      <Video/>
+      <Video/>
+      <Video/>
+      <Video/>
+
+      </>
   );
 }
 

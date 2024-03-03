@@ -21,3 +21,16 @@
         Code Editor
 
 */
+
+/*
+    Components
+    Compontnts are Functions which returns UI.
+    Functions (Components) which we will write, used as tags in JSX to render.
+
+    // When we write function name in lower case and export it.
+    // But when import it and use as capitalized, it will work fine.
+    // But when we change the name from import too. (lowercase).
+    // Nothing will be rendered.
+
+
+*/
