@@ -7,6 +7,7 @@ function Video(props) {
     let views = props.views;
     let time = props.time;
     let verified = props.verified;
+    let id = props.id;
 
     // We can also use 'short circuit' '&&' if both values are true then it'll execute.
     // Otherwise, it'll not run.
@@ -20,7 +21,7 @@ function Video(props) {
                 </div>
                 <div className='title'>{title}</div>
 
-        <div className='channel'>{channel} {verified && 'VERIFIED'}</div>
+        <div className='channel'>{channel} {id} {verified && 'VERIFIED'}</div>
 
                 <div className='views'>{views} views <span>.</span> {time}</div>
             </div>
