@@ -2,7 +2,7 @@ import './Video.css';
 
 function Video(props) {
 
-    let title = props.title;
+    let title = props.title || "Nothing";
     let channel = props.channel;
     let views = props.views;
     let time = props.time;

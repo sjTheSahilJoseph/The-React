@@ -31,6 +31,11 @@
     // But when import it and use as capitalized, it will work fine.
     // But when we change the name from import too. (lowercase).
     // Nothing will be rendered.
-
+    
+    When we have to add another component inside component, we can use {children}
+    <ComponentName/> -> Single component
+    <ComponentName> <AnotherComponent/>  </ComponentName> -> With Children Component
+        In ComponentName() we have to use {children} where we want to use it.
+    // We can pass default props value as well.
 
 */
