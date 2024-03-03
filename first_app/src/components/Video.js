@@ -1,6 +1,10 @@
 import PlayButton from './PlayButton';
 import './Video.css';
 
+// Now we have to make functionality separate, If we pass a function as prop to this component, then it'll not work directly.
+// Because, onClick only works on HTML Tags generally when treated as component stuff.
+//
+
 function Video(props) {
 
     let title = props.title || "Nothing";
@@ -10,9 +14,6 @@ function Video(props) {
     let verified = props.verified;
     let id = props.id;
 
-    // We can also use 'short circuit' '&&' if both values are true then it'll execute.
-    // Otherwise, it'll not run.
-    // // But sometimes, it'll create trouble with numbers, like if the prop will pass 0, it'll print 0, and if 2, then it'll be true and run next thing.
     return (
 
         <>
@@ -26,7 +27,7 @@ function Video(props) {
 
                 <div className='views'>{views} views <span>.</span> {time}</div>
 
-        <PlayButton message='Play'>
+        <PlayButton onClick={()=>{console.log("outer onclick")}} message='Play'>
             Play
         </PlayButton>
         <PlayButton message='Pause'>
