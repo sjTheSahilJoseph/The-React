@@ -2,6 +2,7 @@ import Video from "./components/Video";
 import Com from "./components/Com";
 import "./App.css";
 import data from './data/data'
+import PlayButton from "./components/PlayButton";
 
 // Also data outside the src folder is not supported.
 
@@ -20,7 +21,13 @@ function App() {
         {
             data.map((video)=>{
                 return (
-                <Video key={video.id} id={video.id} verified={video.verified} title={video.title} channel={video.channel} time={video.time} views={video.views} />
+                <Video key={video.id} id={video.id} verified={video.verified} title={video.title} channel={video.channel} time={video.time} views={video.views}>
+                    {
+        <PlayButton onPause={()=>{console.log("Pause")}} onPlay={()=>{console.log("Play")}} message='Play'>
+            Toggle Play Pause
+        </PlayButton>
+                    }
+                    </Video>
                 )
             })
         }

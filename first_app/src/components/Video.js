@@ -14,6 +14,7 @@ function Video(props) {
     let time = props.time;
     let verified = props.verified;
     let id = props.id;
+    let children = props.children;
 
     return (
 
@@ -27,10 +28,8 @@ function Video(props) {
         <div className='channel'>{channel} {id} {verified && 'VERIFIED'}</div>
 
                 <div className='views'>{views} views <span>.</span> {time}</div>
-
-        <PlayButton onPause={()=>{console.log("Pause")}} onPlay={()=>{console.log("Play")}} message='Play'>
-            Toggle Play Pause
-        </PlayButton>
+        
+        {children}
 
             </div>
         </>
