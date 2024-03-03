@@ -2,7 +2,7 @@ import './PlayButton.css';
 
 // We can take props using this syntax as well. This is called destructuring
 
-function PlayButton({message="Default", name="Name"}) {
+function PlayButton({message="Default", children}) {
 
     function handleClick() {
         // console.log({message});
@@ -18,7 +18,7 @@ function PlayButton({message="Default", name="Name"}) {
             <button
             onClick={handleClick}
             >
-        {name}
+        {children}
             </button>
 
         </>

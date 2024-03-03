@@ -26,8 +26,12 @@ function Video(props) {
 
                 <div className='views'>{views} views <span>.</span> {time}</div>
 
-        <PlayButton message='Play' name='Play'/>
-        <PlayButton message='Pause' name='Pause'/>
+        <PlayButton message='Play'>
+            Play
+        </PlayButton>
+        <PlayButton message='Pause'>
+            Pause
+        </PlayButton>
 
             </div>
         </>
