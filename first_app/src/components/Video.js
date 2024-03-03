@@ -19,7 +19,7 @@ function Video(props) {
                 </div>
                 <div className='title'>{title}</div>
 
-        { verified ? <div className='channel'>{channel} verified</div> :  <div className='channel'>{channel}</div>}
+        <div className='channel'>{channel} {verified ? 'VERIFIED' : null}</div>
 
                 <div className='views'>{views} views <span>.</span> {time}</div>
             </div>
