@@ -4,6 +4,7 @@ import './Video.css';
 // Now we have to make functionality separate, If we pass a function as prop to this component, then it'll not work directly.
 // Because, onClick only works on HTML Tags generally when treated as component stuff.
 // To solve that, we have to call it in the component, we this is also a prop doesn't matter its value is function.
+// // Keep in mind that the name onClick is just a name our custom name basically, it has nothing to do with functionality.
 
 function Video(props) {
 
