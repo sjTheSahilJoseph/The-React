@@ -4,6 +4,7 @@ import data from './data/data'
 import PlayButton from "./components/PlayButton";
 
 // Event Bubbling will happen same as HTML.
+// We can control it using event object.
 
 function App() {
     return (
