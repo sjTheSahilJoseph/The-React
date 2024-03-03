@@ -8,8 +8,9 @@ function Video(props) {
     let time = props.time;
     let verified = props.verified;
 
-    // We can also pass null in ternary operator.
-    // Why it is working? Because ternrary returns the jsx. But if else don't.
+    // We can also use 'short circuit' '&&' if both values are true then it'll execute.
+    // Otherwise, it'll not run.
+    // // But sometimes, it'll create trouble with numbers, like if the prop will pass 0, it'll print 0, and if 2, then it'll be true and run next thing.
     return (
 
         <>
@@ -19,7 +20,7 @@ function Video(props) {
                 </div>
                 <div className='title'>{title}</div>
 
-        <div className='channel'>{channel} {verified ? 'VERIFIED' : null}</div>
+        <div className='channel'>{channel} {verified && 'VERIFIED'}</div>
 
                 <div className='views'>{views} views <span>.</span> {time}</div>
             </div>
