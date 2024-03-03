@@ -4,7 +4,14 @@ import './PlayButton.css';
 function PlayButton({onPlay, onPause, children}) {
 
     let play = true;
-    function handleClick() {
+    function handleClick(e) {
+        console.log(e);
+        // SyntheticBaseEvent.
+        // This is made by react basically modified by react, otherwise it is availabe in HTML with event object.
+        //
+        // To avoid event bubbling.
+        e.stopPropagation();
+
         if (play) {
         onPlay();
         } else {

@@ -3,13 +3,10 @@ import "./App.css";
 import data from './data/data'
 import PlayButton from "./components/PlayButton";
 
-// Event Bubbling will happen same as HTML.
-// We can control it using event object.
-
 function App() {
     return (
         <>
-            <div className="App">
+            <div className="App" onClick={()=>{console.log("app")}}>
         {
             data.map((video)=>{
                 return (
