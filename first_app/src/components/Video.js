@@ -28,11 +28,8 @@ function Video(props) {
 
                 <div className='views'>{views} views <span>.</span> {time}</div>
 
-        <PlayButton onClick={()=>{console.log("Play")}} message='Play'>
-            Play
-        </PlayButton>
-        <PlayButton onClick={()=>{alert("Pause")}} message='Pause'>
-            Pause
+        <PlayButton onPause={()=>{console.log("Pause")}} onPlay={()=>{console.log("Play")}} message='Play'>
+            Toggle Play Pause
         </PlayButton>
 
             </div>
