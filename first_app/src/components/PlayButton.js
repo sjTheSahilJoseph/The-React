@@ -7,11 +7,12 @@ function PlayButton({onPlay, onPause, children}) {
     function handleClick() {
         if (play) {
         onPlay();
-        play = false;
         } else {
             onPause();
-        play = true;
         }
+
+        play = !play;
+        // This will reverse the statement, like if this is true, it'll make it false, and if its false, then it'll make it true;
     }
 
 
