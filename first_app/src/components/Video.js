@@ -1,3 +1,4 @@
+import PlayButton from './PlayButton';
 import './Video.css';
 
 function Video(props) {
@@ -24,6 +25,7 @@ function Video(props) {
         <div className='channel'>{channel} {id} {verified && 'VERIFIED'}</div>
 
                 <div className='views'>{views} views <span>.</span> {time}</div>
+        <PlayButton/>
             </div>
         </>
 
