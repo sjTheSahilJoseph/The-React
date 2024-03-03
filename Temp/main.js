@@ -1,0 +1,7 @@
+/*
+
+    Conditional Rendering.
+    Conditional rendering is basically rendering layout on the basis of some conditions.
+    We can do that using JavaScript.
+
+*/
