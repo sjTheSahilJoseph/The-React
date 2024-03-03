@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
     // As this is JSX, we can use JavaScript things as well. Like passing props using javaScript Object and then using spread operator.
+    // names should match 100%.
     let data = {
         title: "title x",
         channel: "chanell x",
