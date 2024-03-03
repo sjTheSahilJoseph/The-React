@@ -1,10 +1,10 @@
 import './PlayButton.css';
 
 
-function PlayButton({message="Default", children}) {
+function PlayButton({onClick, children}) {
 
     function handleClick() {
-        console.log(message);
+        onClick();
     }
 
 

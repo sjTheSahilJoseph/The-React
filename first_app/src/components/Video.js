@@ -3,7 +3,7 @@ import './Video.css';
 
 // Now we have to make functionality separate, If we pass a function as prop to this component, then it'll not work directly.
 // Because, onClick only works on HTML Tags generally when treated as component stuff.
-//
+// To solve that, we have to call it in the component, we this is also a prop doesn't matter its value is function.
 
 function Video(props) {
 
@@ -27,10 +27,10 @@ function Video(props) {
 
                 <div className='views'>{views} views <span>.</span> {time}</div>
 
-        <PlayButton onClick={()=>{console.log("outer onclick")}} message='Play'>
+        <PlayButton onClick={()=>{console.log("Play")}} message='Play'>
             Play
         </PlayButton>
-        <PlayButton message='Pause'>
+        <PlayButton onClick={()=>{alert("Pause")}} message='Pause'>
             Pause
         </PlayButton>
 
