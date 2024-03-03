@@ -6,12 +6,18 @@ import './PlayButton.css';
 // By doing this, we say that this is defined but not executed, when the person clicks, this will be executed.
 function PlayButton() {
 
+    // typically we use these handleFunctions, or EventHandlers.
+    // This is just a convention to name it like this {handle<eventName>} but we can use any name.
+    function handleClick() {
+        console.log("clicked");
+    }
+
 
     return (
         <>
 
             <button
-            onClick={() => console.log('this')}
+            onClick={handleClick}
             >
                 Play
             </button>
