@@ -1,21 +1,15 @@
-// Relative Path
 import Video from "./components/Video";
-
-// Components are re-usable.
-
-// But the data is same. How can we change the data inside component?
-// We use props for that to pass data.
-
-// We can set our own name and value of it.
+import "./App.css";
 
 function App() {
-  return (
-      <>
-
-      <Video title="Title 1"/>
-      <Video title="Title 2"/>
-      </>
-  );
+    return (
+        <>
+            <div className="App">
+                <Video title="Title 1" channel="SJ" time="1 minute ago" views="10k" />
+                <Video title="Title 2" channel="JS" views="1k" time="10 minutes ago" />
+            </div>
+        </>
+    );
 }
 
 export default App;
