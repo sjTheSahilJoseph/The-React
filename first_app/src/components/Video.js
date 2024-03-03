@@ -23,9 +23,21 @@
 
 // We can use componenet by <name/> or <name></name> both ways.
 
+
+// To pass data to the component, we can use props.
+// Props are a way to pass any data to a component.
+// And then the componenet will use it and render the layout with the prop data.
+// We have to destructure props object to use the data.
+// or we can use props.<name> to use the value.
+
+// Now we have prop object.
+
+// Props are only read-only.
+// When we try to change it it will. but Later on with buttons etc.. it won't work.
+
 import './Video.css';
 
-function Video() {
+function Video(props) {
 
     let classA = 'bgA';
     let a = "Hi";
@@ -38,10 +50,8 @@ function Video() {
     
         <>
         <div>
-            <img src="https://placehold.co/200x80" />
-            <div style={{color: 'white', ...simpleStyle}} className={classA}>Topic - {a} -Video Title</div>
-
-        
+            <img src="https://placehold.co/500x200" />
+            <div style={{color: 'white', ...simpleStyle}} className={classA}>{props.title}</div>
         </div>
         </>
 
