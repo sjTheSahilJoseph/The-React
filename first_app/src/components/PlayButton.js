@@ -4,6 +4,10 @@ import './PlayButton.css';
 // We use custom functions, or arrow functions.
 // By the way, these are called eventHandlers which handles the event.
 // By doing this, we say that this is defined but not executed, when the person clicks, this will be executed.
+
+
+// We just write name of the function, we don't call it.
+
 function PlayButton() {
 
     // typically we use these handleFunctions, or EventHandlers.
