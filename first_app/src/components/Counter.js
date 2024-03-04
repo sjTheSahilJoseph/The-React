@@ -7,16 +7,13 @@ function Counter() {
 
         e.stopPropagation();
 
-        setTimeout(()=>{
-        // This will change the state by one if we click even multiple times as well.
-        // setNumber(number + 1);
-        // setNumber(number + 1);
         setNumber(number=>number+1);
-            // Now number param is its previous value.
-            // and then it is going in qeuau kind of.
-            // So now it'll console log 1, 2, 3, if we press the button 3 4 times continoulsy.
-            // But it'll chagne the state by 3 4 5 or how much time we pressed the button.
-    }, 2000)
+        setNumber(number=>number+1);
+        setNumber(number=>number+1);
+        setNumber(number=>number+1);
+        setNumber(number=>number+1);
+        setNumber(number=>number+1);
+        // now it'll update all. If we click. Because now the value is previous + 1. Not just one single value + 1.
 
         console.log("handleIncrement", number);
 
