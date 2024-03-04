@@ -24,6 +24,7 @@ function Counter() {
 
 
         // State Update.
+        // number++; -> wrong, we can't change state directly
         setNumber(number+1);
 
         // Now it'll work fine.
