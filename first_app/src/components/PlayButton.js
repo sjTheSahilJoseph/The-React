@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './PlayButton.css';
 
+// Every element has its own copy of state, and everything stuff.
+// They are independant
 
 function PlayButton({onPlay, onPause, children}) {
 
