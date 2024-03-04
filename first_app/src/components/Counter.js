@@ -11,6 +11,7 @@ function Counter() {
     // This syntax is 'destructured array'.
     // We need to make two things in array, 1 is the state variable, second is function to update its value.
     // Then we need to use useSate(default initial value);
+    // setNumber is called "setter function".
 
     function handleIncrement(e) {
 
