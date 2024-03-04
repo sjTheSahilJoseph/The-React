@@ -8,8 +8,8 @@ function AddVideo() {
     }
 
     function handleChange(e) {
-
-        console.log(e);
+        console.log(e.target.value);
+        // Now we'll get value of input
     }
 
     // I'm using onSubmit on form, as it is form property.
