@@ -17,16 +17,14 @@ function AddVideo() {
 
     function handleChange(e) {
         console.log(e.target.name, e.target.value);
-        // Now we'll get value of input
+        setVideo({...video,
+
+                [e.target.name]: e.target.value
+        });
+
+        console.log(video);
     }
 
-    // I'm using onSubmit on form, as it is form property.
-    // but we can use it on button as well (submit button inside form);
-    // It'll handle when form will be submit.
-    // We use e.preventDefault();
-    // to prevent page loading while form submission.
-
-    // On inputs. we use onChange handlers to see if the input value is change or not.
     return (
         <>
             <form onSubmit={handleSubmit}>
