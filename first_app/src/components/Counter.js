@@ -8,10 +8,6 @@ function Counter() {
         e.stopPropagation();
 
         setNumber(number=>number+1);
-        // This is called updater function style
-
-        console.log("handleIncrement", number);
-
     }
 
     return (
