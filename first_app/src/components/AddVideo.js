@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './AddVideo.css';
 
-function AddVideo() {
+function AddVideo({setDatta}) {
 
     const [video, setVideo] = useState({
         time: 'dadsfdsa',
@@ -13,6 +13,9 @@ function AddVideo() {
     function handleSubmit(e) {
         e.stopPropagation();
         e.preventDefault();
+    console.table(video);
+        setDatta();
+        // we can use this same  as any othre function
     }
 
     function handleChange(e) {

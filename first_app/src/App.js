@@ -11,7 +11,7 @@ function App() {
     return (
         <>
             <div className="App" onClick={() => { console.log("app") }}>
-        <AddVideo/>
+        <AddVideo setDatta={setData}/>
                 {
                     data.map((video) => {
                         return (
