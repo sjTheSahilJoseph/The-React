@@ -38,8 +38,6 @@ function AddVideo({ setDatta }) {
 
                     <input type="text" value={video.title} name='title' placeholder='title' onChange={handleChange} />
                     <input type="text" value={video.description} name='description' placeholder='views' onChange={handleChange} />
-        // Now they are like controlled form
-
                 </div>
                 <div>
                     <button>Add Video</button>
