@@ -7,16 +7,18 @@ function Counter() {
 
         e.stopPropagation();
 
-        setNumber(number + 1);
-        setNumber(number + 1);
-        setNumber(number + 1);
-        setNumber(number + 1);
-        setNumber(number + 1);
-        // It is incrementing by 1. It doesn't matter how many times we change state in click, Because on first time change it re-renders the whole component with the value.
-        // No no, basically the value of previous so the control is working but the value is 1 every time. that's why we are updated it to + 1. That's the reason.
+        setTimeout(()=>{
+        // This will change the state by one if we click even multiple times as well.
+        // setNumber(number + 1);
+        // setNumber(number + 1);
+        setNumber(number=>number+1);
+            // Now number param is its previous value.
+            // and then it is going in qeuau kind of.
+            // So now it'll console log 1, 2, 3, if we press the button 3 4 times continoulsy.
+            // But it'll chagne the state by 3 4 5 or how much time we pressed the button.
+    }, 2000)
 
-
-        console.log("handleIncrement");
+        console.log("handleIncrement", number);
 
     }
 
