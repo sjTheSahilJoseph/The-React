@@ -1,5 +1,4 @@
 import { useState } from 'react';
-        console.log(e);
 import './PlayButton.css';
 
 // Every element has its own copy of state, and everything stuff.
