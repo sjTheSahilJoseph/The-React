@@ -13,7 +13,7 @@ function Counter() {
         setNumber(number + 1);
         setNumber(number + 1);
         // It is incrementing by 1. It doesn't matter how many times we change state in click, Because on first time change it re-renders the whole component with the value.
-        // And then we again update the state by pressing the button, and the things is other setNubmers are not even using.
+        // No no, basically the value of previous so the control is working but the value is 1 every time. that's why we are updated it to + 1. That's the reason.
 
 
         console.log("handleIncrement");
