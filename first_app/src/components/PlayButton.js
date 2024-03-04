@@ -1,15 +1,13 @@
+import { useState } from 'react';
 import './PlayButton.css';
 
 
 function PlayButton({onPlay, onPause, children}) {
 
-    let play = true;
+    const [play, setPlay] = useState(false);
+
     function handleClick(e) {
-        console.log(e);
-        // SyntheticBaseEvent.
-        // This is made by react basically modified by react, otherwise it is availabe in HTML with event object.
-        //
-        // To avoid event bubbling.
+
         e.stopPropagation();
 
         if (play) {
@@ -18,8 +16,8 @@ function PlayButton({onPlay, onPause, children}) {
             onPause();
         }
 
-        play = !play;
-        // This will reverse the statement, like if this is true, it'll make it false, and if its false, then it'll make it true;
+        setPlay(!play);
+
     }
 
 
@@ -29,7 +27,7 @@ function PlayButton({onPlay, onPause, children}) {
             <button
             onClick={handleClick}
             >
-        {children}
+        {children} : {play?'>':'||'}
             </button>
 
         </>
