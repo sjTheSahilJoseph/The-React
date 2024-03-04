@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 function Counter() {
+    // Keep in mind that if we print the value of number, it'll tell its previous, because of the control flow.
+    // Simple as that.
 
     // Normal Variable.
     // let number = 0;
