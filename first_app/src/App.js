@@ -10,19 +10,18 @@ function App() {
 
     function handleAddVideo(e) {
         e.stopPropagation();
-        
-        data.push(
-    {
-        id: 1,
-        title: "title x",
-        channel: "chanell x",
-        time: "25 minutes ago",
-        views: "1M views",
-        verified: true,
-    }
-        );
-        // We can't mutate state variable directly
-        // React want that first it makes a copy or previous state, then update by updated state and then updated state will stored as previous state for next time.
+
+        setData([...data,
+        {
+            id: 1,
+            title: "title x",
+            channel: "chanell x",
+            time: "25 minutes ago",
+            views: "1M views",
+            verified: true,
+        }
+        ]
+        )
 
 
         console.log("handleAddVideo");
@@ -31,9 +30,9 @@ function App() {
     return (
         <>
             <div className="App" onClick={() => { console.log("app") }}>
-        <div>
-            <button onClick={handleAddVideo}>Add Video</button>
-        </div>
+                <div>
+                    <button onClick={handleAddVideo}>Add Video</button>
+                </div>
                 {
                     data.map((video) => {
                         return (
