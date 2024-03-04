@@ -2,37 +2,16 @@ import Video from "./components/Video";
 import "./App.css";
 import dataa from './data/data'
 import PlayButton from "./components/PlayButton";
-import Counter from "./components/Counter";
 import { useState } from "react";
+import AddVideo from "./components/AddVideo";
 
 function App() {
     const [data, setData] = useState(dataa);
 
-    function handleAddVideo(e) {
-        e.stopPropagation();
-
-        setData([...data,
-        {
-            id: data.length + 1,
-            title: "title x",
-            channel: "chanell x",
-            time: "25 minutes ago",
-            views: "1M views",
-            verified: true,
-        }
-        ]
-        )
-
-
-        console.log("handleAddVideo");
-    }
-
     return (
         <>
             <div className="App" onClick={() => { console.log("app") }}>
-                <div>
-                    <button onClick={handleAddVideo}>Add Video</button>
-                </div>
+        <AddVideo/>
                 {
                     data.map((video) => {
                         return (
@@ -47,7 +26,6 @@ function App() {
                     })
                 }
 
-                <Counter />
             </div>
         </>
     );
