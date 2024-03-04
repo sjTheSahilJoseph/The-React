@@ -7,6 +7,7 @@ function Counter() {
     
     // State Variable.
     const [number, setNumber] = useState(0);
+    // This syntax is 'destructured array'.
     // We need to make two things in array, 1 is the state variable, second is function to update its value.
     // Then we need to use useSate(default initial value);
 
