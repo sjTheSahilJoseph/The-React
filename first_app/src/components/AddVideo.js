@@ -16,6 +16,7 @@ function AddVideo({setDatta}) {
     console.table(video);
         setDatta();
         // we can use this same  as any othre function
+        // But now what about old video? Because we have to mantain it
     }
 
     function handleChange(e) {
