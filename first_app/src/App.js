@@ -8,10 +8,20 @@ import AddVideo from "./components/AddVideo";
 function App() {
     const [data, setData] = useState(dataa);
 
+    function setDatta(video) {
+        // we'll get video object and then do the rest here.
+        
+        setData(
+            [...data,
+                {...video, id: data.length + 1}
+            ]
+        );
+    }
+
     return (
         <>
             <div className="App" onClick={() => { console.log("app") }}>
-        <AddVideo setDatta={setData}/>
+        <AddVideo setDatta={setDatta}/>
                 {
                     data.map((video) => {
                         return (

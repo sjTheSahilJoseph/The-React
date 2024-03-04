@@ -14,9 +14,10 @@ function AddVideo({setDatta}) {
         e.stopPropagation();
         e.preventDefault();
     console.table(video);
-        setDatta();
+        setDatta(video);
         // we can use this same  as any othre function
         // But now what about old video? Because we have to mantain it
+        // We can create a function in parent which will take video object and simply run all the stuff (app).
     }
 
     function handleChange(e) {
