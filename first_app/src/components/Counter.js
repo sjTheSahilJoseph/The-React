@@ -8,13 +8,7 @@ function Counter() {
         e.stopPropagation();
 
         setNumber(number=>number+1);
-        setNumber(number=>number+1);
-        setNumber(number=>number+1);
-        setNumber(number=>number+1);
-        setNumber(number=>number+1);
-        setNumber(number=>number+1);
-        // now it'll update all. If we click. Because now the value is previous + 1. Not just one single value + 1.
-        // // Keep in mind that first onClick will run, then the state will update, then the componnent will re-render
+        // This is called updater function style
 
         console.log("handleIncrement", number);
 
