@@ -13,7 +13,7 @@ function App() {
 
         setData([...data,
         {
-            id: 1,
+            id: data.length + 1,
             title: "title x",
             channel: "chanell x",
             time: "25 minutes ago",
