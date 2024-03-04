@@ -1,6 +1,14 @@
+import { useState } from 'react';
 import './AddVideo.css';
 
 function AddVideo() {
+
+    const [video, setVideo] = useState({
+        time: 'dadsfdsa',
+        channel: 'dfad',
+        verified: true,
+}
+    );
 
     function handleSubmit(e) {
         e.stopPropagation();
@@ -8,7 +16,7 @@ function AddVideo() {
     }
 
     function handleChange(e) {
-        console.log(e.target.value);
+        console.log(e.target.name, e.target.value);
         // Now we'll get value of input
     }
 
@@ -25,8 +33,8 @@ function AddVideo() {
         
                 <div>
 
-                    <input type="text" placeholder='title' onChange={handleChange} />
-                    <input type="text" placeholder='views' onChange={handleChange} />
+                    <input type="text" name='title' placeholder='title' onChange={handleChange} />
+                    <input type="text" name='description' placeholder='views' onChange={handleChange} />
 
                 </div>
                 <div>
