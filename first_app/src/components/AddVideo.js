@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
-import VideoDispatchContext from '../context/VideoDispatchContext';
+import {useEffect, useState } from 'react';
+import useVideoDispatch from '../hooks/VideosDispatch';
 import './AddVideo.css';
 
 function AddVideo({edv}) {
@@ -13,9 +13,10 @@ function AddVideo({edv}) {
         views: "",
     }
 
-    const dispatch = useContext(VideoDispatchContext);
 
     const [video, setVideo] = useState(initState);
+
+    const dispatch = useVideoDispatch();
 
     function handleSubmit(e) {
         e.stopPropagation();
