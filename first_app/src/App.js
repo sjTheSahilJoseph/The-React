@@ -4,16 +4,18 @@ import { useContext, useReducer, useState } from "react";
 import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
 import ThemeContext from "./context/ThemeContext";
+import VideosContext from "./context/VideosContext";
+import VideoDispatchContext from "./context/VideoDispatchContext";
 
 function App() {
     const [edv, setEdv] = useState(null);
 
     function dataReducer(data, action) {
-        switch(action.type) {
+        switch (action.type) {
             case 'ADD':
                 return [...data,
-            { ...action.video, id: data.length + 1 }
-            ]
+                { ...action.video, id: data.length + 1 }
+                ]
             case 'DELETE':
                 return data.filter(video => video.id !== action.payload)
             case 'UPDATE':
@@ -24,7 +26,7 @@ function App() {
                 setEdv(null);
                 return nvdv
             default:
-                    return data;
+                return data;
         }
     }
 
@@ -37,7 +39,7 @@ function App() {
     }
 
     function deleteVideo(id) {
-        dispatch({type: 'DELETE', payload: id});
+        dispatch({ type: 'DELETE', payload: id });
     }
 
 
@@ -45,18 +47,22 @@ function App() {
 
     return (
         <>
-        <ThemeContext.Provider value={themeState}>
-        <button onClick={()=>{
-            setThemeState(themeState == 'darkmode'? 'lightmode': 'darkmode');
-        }}>
-        Mode
-        </button>
-            <div className={`App ${themeState}`}>
-                <AddVideo dispatch={dispatch} edv={edv}  />
-                <VideoList dispatch={dispatch}updateVideo={updateVideo} deleteVideo={deleteVideo} data={data} />
+            <ThemeContext.Provider value={themeState}>
+                <VideosContext.Provider value={data}>
+                    <VideoDispatchContext.Provider value={dispatch}>
+                        <button onClick={() => {
+                            setThemeState(themeState == 'darkmode' ? 'lightmode' : 'darkmode');
+                        }}>
+                            Mode
+                        </button>
+                        <div className={`App ${themeState}`}>
+                            <AddVideo edv={edv} />
+                            <VideoList updateVideo={updateVideo} deleteVideo={deleteVideo} />
 
-            </div>
-        </ThemeContext.Provider>
+                        </div>
+                    </VideoDispatchContext.Provider>
+                </VideosContext.Provider>
+            </ThemeContext.Provider>
         </>
     );
 }

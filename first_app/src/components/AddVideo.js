@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import VideoDispatchContext from '../context/VideoDispatchContext';
 import './AddVideo.css';
 
-function AddVideo({ dispatch, edv}) {
+function AddVideo({edv}) {
 
     const initState = {
         time: 'dadsfdsa',
@@ -12,6 +13,7 @@ function AddVideo({ dispatch, edv}) {
         views: "",
     }
 
+    const dispatch = useContext(VideoDispatchContext);
 
     const [video, setVideo] = useState(initState);
 
@@ -34,12 +36,6 @@ function AddVideo({ dispatch, edv}) {
 
     }
 
-    // useEffect will run when our component will mount.// mount means render.
-    // It is used to perform any side effect.
-    // // It take one calback function, and then dependencie array.
-    // // If the array is empty, it'll run only only once, and if it has some array, it'll run everytime their values change.
-    // // If we don't provied [] then it'll infinitely run.
-    // // it will run once when this component will mount, and then each time edv values will change.
     useEffect(()=>{
         if (edv) {
         setVideo(edv)
