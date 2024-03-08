@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './AddVideo.css';
 
-function AddVideo({ setDatta, edv, edvd}) {
+function AddVideo({ dispatch, edv}) {
 
     const initState = {
         time: 'dadsfdsa',
@@ -19,9 +19,9 @@ function AddVideo({ setDatta, edv, edvd}) {
         e.stopPropagation();
         e.preventDefault();
         if (edv) {
-            edvd(video);
+        dispatch({type: 'UPDATE', payload: video});
         } else {
-        setDatta(video);
+        dispatch({type: 'ADD', payload: video});
         }
         setVideo(initState);
     }

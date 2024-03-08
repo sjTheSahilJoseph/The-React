@@ -9,8 +9,8 @@ function Video(props) {
     let verified = props.verified;
     let id = props.id;
     let children = props.children;
-    let deleteVideo = props.deleteVideo;
     let updateVideo = props.updateVideo;
+    let dispatch = props.dispatch;
 
 
 
@@ -18,7 +18,8 @@ function Video(props) {
 
         <>
             <div className='container'>
-        <button onClick={()=>{deleteVideo(id)}} className='close'>X</button>
+        <button onClick={()=>{
+        dispatch({type: 'DELETE', payload: id})}} className='close'>X</button>
         <button onClick={()=>{updateVideo(id)}} className='update'>U</button>
                 <div className='pic'>
                     <img src="https://placehold.co/500x200" />

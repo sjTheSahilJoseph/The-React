@@ -5,7 +5,6 @@ import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
 
 function App() {
-    // const [data, setData] = useState(dataa);
     const [edv, setEdv] = useState(null);
 
     function dataReducer(data, action) {
@@ -30,30 +29,21 @@ function App() {
 
     const [data, dispatch] = useReducer(dataReducer, dataa);
 
-    function deleteVideo(id) {
-        dispatch({type: 'DELETE', payload: id});
-    }
-
     function updateVideo(id) {
         let d = data.find(video => video.id === id);
         console.log(d);
         setEdv(d);
     }
 
-
-    function setDatta(video) {
-        dispatch({type: 'ADD', payload: video});
-    }
-
-    function edvd(video) {
-        dispatch({type: 'UPDATE', payload: video});
+    function deleteVideo(id) {
+        dispatch({type: 'DELETE', payload: id});
     }
 
     return (
         <>
             <div className="App">
-                <AddVideo edv={edv} edvd={edvd} setDatta={setDatta} />
-                <VideoList updateVideo={updateVideo} deleteVideo={deleteVideo} data={data} />
+                <AddVideo dispatch={dispatch} edv={edv}  />
+                <VideoList dispatch={dispatch}updateVideo={updateVideo} deleteVideo={deleteVideo} data={data} />
 
             </div>
         </>
