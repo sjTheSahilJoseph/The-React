@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import ThemeContext from '../context/ThemeContext';
 import './PlayButton.css';
 
-// Every element has its own copy of state, and everything stuff.
-// They are independant
-
 function PlayButton({onPlay, onPause, children}) {
+
+    const theme = useContext(ThemeContext);
 
     const [play, setPlay] = useState(false);
 
@@ -27,6 +27,7 @@ function PlayButton({onPlay, onPause, children}) {
         <>
 
             <button
+        className={theme}
             onClick={handleClick}
             >
         {children} : {play?'>':'||'}

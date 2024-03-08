@@ -1,8 +1,9 @@
 import "./App.css";
 import dataa from './data/data'
-import { useReducer, useState } from "react";
+import { useContext, useReducer, useState } from "react";
 import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
+import ThemeContext from "./context/ThemeContext";
 
 function App() {
     const [edv, setEdv] = useState(null);
@@ -39,13 +40,23 @@ function App() {
         dispatch({type: 'DELETE', payload: id});
     }
 
+
+    const [themeState, setThemeState] = useState('lightmode');
+
     return (
         <>
-            <div className="App">
+        <ThemeContext.Provider value={themeState}>
+        <button onClick={()=>{
+            setThemeState(themeState == 'darkmode'? 'lightmode': 'darkmode');
+        }}>
+        Mode
+        </button>
+            <div className={`App ${themeState}`}>
                 <AddVideo dispatch={dispatch} edv={edv}  />
                 <VideoList dispatch={dispatch}updateVideo={updateVideo} deleteVideo={deleteVideo} data={data} />
 
             </div>
+        </ThemeContext.Provider>
         </>
     );
 }
