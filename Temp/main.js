@@ -1,6 +1,5 @@
 /*
-    useEffect
-        We use useEffect when we have to do something after the component renders.
-
+    useReducers for State Management
+    In short, reducer is a place where we put state logic.
 */
 
