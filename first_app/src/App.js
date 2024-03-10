@@ -6,6 +6,10 @@ import VideoList from "./components/VideoList";
 import ThemeContext from "./context/ThemeContext";
 import VideosContext from "./context/VideosContext";
 import VideoDispatchContext from "./context/VideoDispatchContext";
+import Counter from "./components/Counter";
+
+// useRef
+// useRef hook is used when we have to perform DOM programming.
 
 function App() {
     const [edv, setEdv] = useState(null);
@@ -56,6 +60,7 @@ function App() {
                             Mode
                         </button>
                         <div className={`App ${themeState}`}>
+        <Counter/>
                             <AddVideo edv={edv} />
                             <VideoList updateVideo={updateVideo} deleteVideo={deleteVideo} />
 
