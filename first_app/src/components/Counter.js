@@ -27,6 +27,7 @@ function Counter() {
     }
     // now if we show the ref value to jsx, it'll update, not because of useRef, but because of useState, everytime we change the state, it is re-rendering.
     // We use useRef when we have to store something which we don't wanna show but still, we want to have a record of.
+    // Basically it is used when we have to use DOM in React.
 
     return (
 

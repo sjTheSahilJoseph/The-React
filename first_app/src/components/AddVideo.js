@@ -1,8 +1,10 @@
-import {useEffect, useState } from 'react';
+import {useEffect, useRef, useState } from 'react';
 import useVideoDispatch from '../hooks/VideosDispatch';
 import './AddVideo.css';
 
 function AddVideo({edv}) {
+
+    const inputRef = useRef(null);
 
     const initState = {
         time: 'dadsfdsa',
@@ -41,7 +43,24 @@ function AddVideo({edv}) {
         if (edv) {
         setVideo(edv)
         }
+
+        // When we have to focus by default.
+        // inputRef.current.focus();
+        //
+
+        inputRef.current.placeholder = "";
+
+        inputRef.current.focus();
+        "Type here".split('').forEach((char, i)=> {
+            setTimeout(()=>{
+                inputRef.current.placeholder = inputRef.current.placeholder + char;
+            }, 100*i);
+        })
+
+
     }, [edv]);
+
+    // we have to pass ref prop our ref, it'll have its object in current.
 
     return (
         <>
@@ -49,7 +68,7 @@ function AddVideo({edv}) {
 
                 <div>
 
-                    <input type="text" value={video.title} name='title' placeholder='title' onChange={handleChange} />
+                    <input ref={inputRef} type="text" value={video.title} name='title' placeholder='title' onChange={handleChange} />
                     <input type="text" value={video.views} name='views' placeholder='views' onChange={handleChange} />
                 </div>
                 <div>
