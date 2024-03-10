@@ -25,12 +25,16 @@ function Counter() {
         // If we have to implement the function to see that how many times this thing have runned.
         // we can use useRef
     }
+    // now if we show the ref value to jsx, it'll update, not because of useRef, but because of useState, everytime we change the state, it is re-rendering.
+    // We use useRef when we have to store something which we don't wanna show but still, we want to have a record of.
 
     return (
 
         <>
 
             <h1 style={{ color: 'white' }}>{number}</h1>
+
+            <h1 style={{ color: 'blue' }}>{num.current}</h1>
 
             <button onClick={handleIncrement}>Increment</button>
 
