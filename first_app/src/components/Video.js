@@ -18,24 +18,14 @@ function Video(props) {
     const theme = useContext(ThemeContext);
     const dispatch = useVideoDispatch();
 
-    // useEffect hook is used to perform any side effect.
-    // Now, in strict mode, it'll run twice, but in production it won't.
     useEffect(()=>{
-        console.log("video playing", id);
+        console.log("video playing");
     }, []);
-
-    // We use use-effect when we have to do somethign after rendering.
-    
-    // For example. If we write something before return <></>
-    // It will create problems, because the component isn't rendered, but we executed something before JSX, for example useRef.
-    // So we use useEffect to do somethings after the component returns Jsx.
-    // There can me many useEffects in the same component.
-
-    // Component life-cycle.
-    // Mount = First render
-    // Re-render = re-runs
-    // Unmounting = Removing the component form DOM.
-
+    // in useEffect(callback, []);
+    // // [] = dependency array.
+    // // empty array [] means only first time it'll run.
+    // [dependency1, dependency2] = first time + every time the value of these variables inside dependency array change, useState will also run.
+    // // no dependency means every time, render, re-render, etc...
 
     return (
 
