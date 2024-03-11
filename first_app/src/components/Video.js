@@ -18,28 +18,14 @@ function Video(props) {
     const theme = useContext(ThemeContext);
     const dispatch = useVideoDispatch();
 
-    useEffect(() => {
-        const idint = setInterval(() => {
-            console.log("video playing", id);
-        }, 10000);
-
-        return ()=>{
-
-            // Here we clean the interval.
-
-            clearInterval(idint);
-
-            // Now it's not runnig twice, because of the logic, it is running twice but we're cleaning the setInterval by id.
-            // Also, now if we unmount the component, its effect will also stop.
-            // Because now we are cleaning up.
-            // // we can use cleanup for like, clearning the events.
-
+    // We can't make async useEffect call back function, but we can create a function inside useEffect, and make it async, then call that function inside useEffect.
+    useEffect(()=>{
+        async function fun() {
+            console.log('fun');
         }
-    }, [id]);
-    // Now if we delete the video, means unmounting, the effect will keep running.
-    // Technically it's called memory leak.
-    // So for that, we have 3rd thing in useEffect which is its cleanup function,
-    // Where we return a function, it's its cleanup function.
+        fun();
+    },[]);
+
 
     return (
 
