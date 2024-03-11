@@ -25,6 +25,11 @@ function Video(props) {
     }, []);
 
     // We use use-effect when we have to do somethign after rendering.
+    
+    // For example. If we write something before return <></>
+    // It will create problems, because the component isn't rendered, but we executed something before JSX, for example useRef.
+    // So we use useEffect to do somethings after the component returns Jsx.
+    // There can me many useEffects in the same component.
 
     // Component life-cycle.
     // Mount = First render
