@@ -24,17 +24,13 @@ function Video(props) {
         console.log("video playing", id);
     }, []);
 
-    // Pure function means that the returning value will not be vary based on some extra outer thing.
-    // For example:
-    function add1(a,b) {
-        return a+b
-    }
-    // Impure function
-    let n = 34;
-    // Now this function will give returning value based on the n.
-    function add2(a,b) {
-        return a+b-n;
-    }
+    // We use use-effect when we have to do somethign after rendering.
+
+    // Component life-cycle.
+    // Mount = First render
+    // Re-render = re-runs
+    // Unmounting = Removing the component form DOM.
+
 
     return (
 
