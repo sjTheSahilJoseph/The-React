@@ -18,15 +18,6 @@ function Video(props) {
     const theme = useContext(ThemeContext);
     const dispatch = useVideoDispatch();
 
-    // We can't make async useEffect call back function, but we can create a function inside useEffect, and make it async, then call that function inside useEffect.
-    useEffect(()=>{
-        async function fun() {
-            console.log('fun');
-        }
-        fun();
-    },[]);
-
-
     return (
 
         <>
