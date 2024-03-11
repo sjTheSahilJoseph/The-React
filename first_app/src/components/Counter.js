@@ -1,12 +1,5 @@
-import { useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
-// We should put this function outside of the Component, because it is not a component specific function.
-function fibonacci(n) {
-    if (n === 1 || n === 0) {
-        return 1;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
 
 function Counter() {
     const [number, setNumber] = useState(0);
@@ -27,13 +20,14 @@ function Counter() {
 
     let fib = 30;
 
-    const value = useMemo(() => fibonacci(fib), [fib]);
-    // {} = wrong
-    // // Basically callback's returning value is memoiziting.
-    // // [] means that the caluculation will be same until dependencies will not be changed.
-    // It'll again hang at re-render, but not with any other stuff.
+const fibc = useCallback(function fibonacci(n) {
+    if (n === 1 || n === 0) {
+        return 1;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}, [])
 
-    // Dependencey array where we add those variables which could impact on the result.
+    const value = useMemo(() => fibc(fib), [fib]);
 
     return (
 
