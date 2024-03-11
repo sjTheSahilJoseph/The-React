@@ -1,15 +1,12 @@
 import "./App.css";
 import dataa from './data/data'
-import { useContext, useReducer, useState } from "react";
+import { useCallback, useReducer, useState } from "react";
 import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
 import ThemeContext from "./context/ThemeContext";
 import VideosContext from "./context/VideosContext";
 import VideoDispatchContext from "./context/VideoDispatchContext";
 import Counter from "./components/Counter";
-
-// useRef
-// useRef hook is used when we have to perform DOM programming.
 
 function App() {
     const [edv, setEdv] = useState(null);
@@ -48,6 +45,8 @@ function App() {
 
 
     const [themeState, setThemeState] = useState('lightmode');
+
+    // We can't use hook inside JSX, it will only called on the top level.
 
     return (
         <>

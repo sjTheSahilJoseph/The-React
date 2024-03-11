@@ -1,8 +1,10 @@
-import { useContext, useState } from 'react';
+import { memo, useContext, useState } from 'react';
 import ThemeContext from '../context/ThemeContext';
 import './PlayButton.css';
 
-function PlayButton({onPlay, onPause, children}) {
+// We can also memoize the component, using memo hook
+// momoized comonent don't re-renders until it's props are changing.
+const PlayButton = memo(function PlayButton({onPlay, onPause, children}) {
 
     const theme = useContext(ThemeContext);
 
@@ -36,6 +38,6 @@ function PlayButton({onPlay, onPause, children}) {
         </>
     );
 
-}
+})
 
 export default PlayButton;

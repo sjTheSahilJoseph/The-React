@@ -20,10 +20,6 @@ function Counter() {
 
     let fib = 30;
 
-    // useCallBack is used to memoize the function.
-    // Now it'll take the same refference.
-    // Because in JS, function also copies to another reference.
-    // To avoid that, we use useCallBack to memoize our function.
 const fibc = useCallback(function fibonacci(n) {
     if (n === 1 || n === 0) {
         return 1;
