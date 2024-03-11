@@ -18,14 +18,27 @@ function Video(props) {
     const theme = useContext(ThemeContext);
     const dispatch = useVideoDispatch();
 
-    useEffect(()=>{
-        console.log("video playing");
-    }, []);
-    // in useEffect(callback, []);
-    // // [] = dependency array.
-    // // empty array [] means only first time it'll run.
-    // [dependency1, dependency2] = first time + every time the value of these variables inside dependency array change, useState will also run.
-    // // no dependency means every time, render, re-render, etc...
+    useEffect(() => {
+        const idint = setInterval(() => {
+            console.log("video playing", id);
+        }, 10000);
+
+        return ()=>{
+
+            // Here we clean the interval.
+
+            clearInterval(idint);
+
+            // Now it's not runnig twice, because of the logic, it is running twice but we're cleaning the setInterval by id.
+            // Also, now if we unmount the component, its effect will also stop.
+            // Because now we are cleaning up.
+
+        }
+    }, [id]);
+    // Now if we delete the video, means unmounting, the effect will keep running.
+    // Technically it's called memory leak.
+    // So for that, we have 3rd thing in useEffect which is its cleanup function,
+    // Where we return a function, it's its cleanup function.
 
     return (
 
