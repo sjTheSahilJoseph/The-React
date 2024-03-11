@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import ThemeContext from '../context/ThemeContext';
 import useVideoDispatch from '../hooks/VideosDispatch';
 import './Video.css';
@@ -17,6 +17,24 @@ function Video(props) {
 
     const theme = useContext(ThemeContext);
     const dispatch = useVideoDispatch();
+
+    // useEffect hook is used to perform any side effect.
+    // Now, in strict mode, it'll run twice, but in production it won't.
+    useEffect(()=>{
+        console.log("video playing", id);
+    }, []);
+
+    // Pure function means that the returning value will not be vary based on some extra outer thing.
+    // For example:
+    function add1(a,b) {
+        return a+b
+    }
+    // Impure function
+    let n = 34;
+    // Now this function will give returning value based on the n.
+    function add2(a,b) {
+        return a+b-n;
+    }
 
     return (
 
