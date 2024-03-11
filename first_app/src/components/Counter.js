@@ -29,6 +29,7 @@ function Counter() {
 
     const value = useMemo(() => fibonacci(fib), [fib]);
     // {} = wrong
+    // // Basically callback's returning value is memoiziting.
     // // [] means that the caluculation will be same until dependencies will not be changed.
     // It'll again hang at re-render, but not with any other stuff.
 
