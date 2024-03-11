@@ -32,6 +32,7 @@ function Video(props) {
             // Now it's not runnig twice, because of the logic, it is running twice but we're cleaning the setInterval by id.
             // Also, now if we unmount the component, its effect will also stop.
             // Because now we are cleaning up.
+            // // we can use cleanup for like, clearning the events.
 
         }
     }, [id]);
